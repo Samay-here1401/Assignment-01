@@ -1,0 +1,40 @@
+Solution Approach :
+
+As per the given constraints I have taken time as a universal variable such that if t = 0 is the starting time then t = Tr is the time when the last vehicle reaches sits final destination city. Also I have assumed another condition that for every vehicle I am charging that amount of battery with which it covers the distance for the another node. Also by taking time this manner and also observing the nodes of every vehicle I can get maximum value of Tr is as minimum as possible.
+
+So for the given constraints I have assumed it as a 2 linear equations :
+
+1. y = mx + c
+where,
+  y = total charge
+  m = charging rate(Cr)
+  x = time taken
+  c = initial charge(Br)
+
+2. y' = m'x'
+
+So net charge is the result of equation 1 and 2.
+And by given average speed (constant for all the cars) we can calculate our required distance.
+
+So the algorithm is as follows :
+
+1.  Defining path_plot function, which uses info of city and vehicle.
+2.  Calculating Heuristic of distances in each city
+3.  Applying A* algorithm to get the optimal path for the node
+4.  Optimisation of charge and time for the optimal path found
+5.  Now getting the travel time of each car and reporting the final minimised Tr.
+
+Result obtained :
+
+Path :
+[0, 1]
+[1, 2]
+[2, 0]
+
+Time Taken :
+12.0
+17.0
+16.0
+
+Tr :
+17.0
